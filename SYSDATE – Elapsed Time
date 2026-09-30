@@ -1,0 +1,9 @@
+17. Show the number of days since each employee joined
+SELECT employee_id, first_name, hire_date,
+SYSDATE - hire_date AS days_since_joining
+FROM hr.employees;
+
+-- 18. Show the number of months since each employee joined
+SELECT employee_id, first_name, hire_date,
+MONTHS_BETWEEN(SYSDATE, hire_date) AS months_since_joining
+FROM hr.employees;
