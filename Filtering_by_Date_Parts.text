@@ -1,0 +1,24 @@
+-- 6. Find employees who joined in 2005
+SELECT employee_id, first_name, hire_date
+FROM hr.employees
+WHERE TO_CHAR(hire_date, 'YYYY') = '2005';
+
+-- 7. Find employees who joined in January
+SELECT employee_id, first_name, hire_date
+FROM hr.employees
+WHERE TO_CHAR(hire_date, 'MM') = '01';
+
+-- 8. Find employees who joined on the first day of a month
+SELECT employee_id, first_name, hire_date
+FROM hr.employees
+WHERE TO_CHAR(hire_date, 'DD') = '01';
+
+-- 9. Show employees hired in the current year
+SELECT employee_id, first_name, hire_date
+FROM hr.employees
+WHERE TO_CHAR(hire_date, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY');
+
+-- 10. Show employees hired in the current month
+SELECT employee_id, first_name, hire_date
+FROM hr.employees
+WHERE TO_CHAR(hire_date, 'YYYYMM') = TO_CHAR(SYSDATE, 'YYYYMM');
