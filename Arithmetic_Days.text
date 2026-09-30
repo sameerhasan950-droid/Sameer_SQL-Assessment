@@ -1,0 +1,9 @@
+-- 15. Show each employee's 30-day onboarding deadline
+SELECT employee_id, first_name, hire_date,
+hire_date + 30 AS onboarding_deadline
+FROM hr.employees;
+
+-- 16. Show each employee's 90-day review date
+SELECT employee_id, first_name, hire_date,
+hire_date + 90 AS ninety_day_review
+FROM hr.employees;
