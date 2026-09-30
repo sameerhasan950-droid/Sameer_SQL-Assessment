@@ -1,0 +1,49 @@
+9. Display first 10 employees using ROWNUM
+SELECT
+  employee_id,
+  first_name,
+  last_name,
+  salary
+FROM hr.employees
+WHERE ROWNUM <= 10;
+
+
+-- 10. Find Top 10 highest-paid employees using ROWNUM
+-- ORDER BY must happen inside the subquery
+SELECT
+  employee_id,
+  first_name,
+  salary
+FROM (
+  SELECT
+    employee_id,
+    first_name,
+    salary
+  FROM hr.employees
+  ORDER BY salary DESC
+)
+WHERE ROWNUM <= 10;-- 9. Display first 10 employees using ROWNUM
+SELECT
+  employee_id,
+  first_name,
+  last_name,
+  salary
+FROM hr.employees
+WHERE ROWNUM <= 10;
+
+
+-- 10. Find Top 10 highest-paid employees using ROWNUM
+-- ORDER BY must happen inside the subquery
+SELECT
+  employee_id,
+  first_name,
+  salary
+FROM (
+  SELECT
+    employee_id,
+    first_name,
+    salary
+  FROM hr.employees
+  ORDER BY salary DESC
+)
+WHERE ROWNUM <= 10;
