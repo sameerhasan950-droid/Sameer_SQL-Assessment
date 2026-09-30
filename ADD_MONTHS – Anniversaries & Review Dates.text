@@ -1,0 +1,19 @@
+-- 11. Show each employee's first work anniversary
+SELECT employee_id, first_name, hire_date,
+ADD_MONTHS(hire_date, 12) AS first_anniversary
+FROM hr.employees;
+
+-- 12. Show each employee's fifth work anniversary
+SELECT employee_id, first_name, hire_date,
+ADD_MONTHS(hire_date, 60) AS fifth_anniversary
+FROM hr.employees;
+
+-- 13. Show each employee's 3-month review date
+SELECT employee_id, first_name, hire_date,
+ADD_MONTHS(hire_date, 3) AS review_date
+FROM hr.employees;
+
+-- 14. Show each employee's 6-month probation completion date
+SELECT employee_id, first_name, hire_date,
+ADD_MONTHS(hire_date, 6) AS probation_completion
+FROM hr.employees;
