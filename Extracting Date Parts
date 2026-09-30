@@ -1,0 +1,24 @@
+1. Show the year each employee joined
+SELECT employee_id, first_name, hire_date,
+TO_CHAR(hire_date, 'YYYY') AS joining_year
+FROM hr.employees;
+
+-- 2. Show the month number each employee joined
+SELECT employee_id, first_name, hire_date,
+TO_CHAR(hire_date, 'MM') AS joining_month_number
+FROM hr.employees;
+
+-- 3. Show the name of the joining month
+SELECT employee_id, first_name, hire_date,
+TO_CHAR(hire_date, 'FMMonth') AS joining_month_name
+FROM hr.employees;
+
+-- 4. Show the day of the month each employee joined
+SELECT employee_id, first_name, hire_date,
+TO_CHAR(hire_date, 'DD') AS joining_day
+FROM hr.employees;
+
+-- 5. Show the weekday on which each employee joined
+SELECT employee_id, first_name, hire_date,
+TO_CHAR(hire_date, 'FMDay') AS joining_weekday
+FROM hr.employees;
