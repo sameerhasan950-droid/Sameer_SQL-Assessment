@@ -1,0 +1,9 @@
+19. Show the last day of each employee's joining month
+SELECT employee_id, first_name, hire_date,
+LAST_DAY(hire_date) AS joining_month_end
+FROM hr.employees;
+
+-- 20. Show the first Monday after each employee joined
+SELECT employee_id, first_name, hire_date,
+NEXT_DAY(hire_date, 'MONDAY') AS first_monday_after_joining
+FROM hr.employees;
