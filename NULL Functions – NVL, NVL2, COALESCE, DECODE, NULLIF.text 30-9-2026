@@ -1,0 +1,38 @@
+1. Replace NULL commission with 0
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  commission_pct,
+  NVL(commission_pct, 0) AS commission
+FROM hr.employees;
+
+
+-- 2. Calculate commission amount using NVL
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  commission_pct,
+  salary * NVL(commission_pct, 0) AS commission_amount
+FROM hr.employees;
+
+
+-- 3. Calculate total salary including commission
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  commission_pct,
+  salary + (salary * NVL(commission_pct, 0)) AS total_salary
+FROM hr.employees;
+
+
+-- 4. Replace NULL manager ID with 0
+SELECT
+  employee_id,
+  first_name,
+  last_name,
+  manager_id,
+  NVL(manager_id, 0) AS manager_id_after_nvl
+FROM hr.employees;
