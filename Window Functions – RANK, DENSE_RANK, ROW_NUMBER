@@ -1,0 +1,28 @@
+-- 1. RANK employees based on highest salary
+-- Same salary = same rank, next rank may be skipped
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM hr.employees;
+
+
+-- 2. DENSE_RANK employees based on highest salary
+-- Same salary = same rank, but ranks are NOT skipped
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_dense_rank
+FROM hr.employees;
+
+
+-- 3. ROW_NUMBER employees based on highest salary
+-- Every employee gets a unique number
+SELECT
+  employee_id,
+  first_name,
+  salary,
+  ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_number
+FROM hr.employees;
