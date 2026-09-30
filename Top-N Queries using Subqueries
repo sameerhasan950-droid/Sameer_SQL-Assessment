@@ -1,0 +1,25 @@
+-- 7. Find Top 5 highest-paid employees using ROW_NUMBER
+SELECT *
+FROM (
+  SELECT
+    employee_id,
+    first_name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn
+  FROM hr.employees
+)
+WHERE rn <= 5;
+
+
+-- 8. Find employees with Top 3 salary ranks using DENSE_RANK
+-- Includes employees having same salary
+SELECT *
+FROM (
+  SELECT
+    employee_id,
+    first_name,
+    salary,
+    DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_rank
+  FROM hr.employees
+)
+WHERE salary_rank <= 3;
